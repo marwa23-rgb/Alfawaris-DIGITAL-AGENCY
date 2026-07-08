@@ -207,7 +207,7 @@ nav {
 
     font-size:.92rem;
 
-    color:var(--gold);
+    color:var(--muted);
 
 }
 
@@ -257,8 +257,10 @@ nav {
 
 
 
-.nav-links a:hover{
-    color:var(--gold);
+.nav-links a:hover {
+
+    color:var(--ink);
+
 }
 
 
@@ -502,27 +504,17 @@ nav {
     text-align: right;
 }
 
-.btn-ghost{
-    color:#fff;
-    border:1px solid #d4a017;
-    background:transparent;
-    padding:15px 30px;
-    border-radius:50px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    transition:.35s;
-    font-weight: 700;
+/* الكتابة الشفافة الخلفية */
+.hero-ghost {
+    position: absolute;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    left: 5%;
+    bottom: 0;
+    z-index: 1;
 }
 
-.btn-ghost:hover{
-    background:#d4a017;
-    color:#111;
-    font-weight: 700;
-    border-color:#d4a017;
-    transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(212,160,23,.35);
-}
 /* العنوان الصغير */
 .eyebrow-line {
     display: flex;
@@ -654,8 +646,8 @@ nav {
     }
 }
 
-/* ---------- TICKER ---------- */
-
+  /* ---------- TICKER ---------- */
+/* ---------- TICKER SECTION ---------- */
 .ticker-section {
     background: var(--panel);
     border-top: 1px solid var(--line);
@@ -669,19 +661,18 @@ nav {
 
 .ticker-track {
     display: flex;
-    width: max-content;
-    animation: ticker 30s linear infinite;
-}
-
-
-.ticker-group {
-    display: flex;
     gap: 45px;
-    flex-shrink: 0;
     white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+    direction: ltr;
 }
 
-.ticker-group span {
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+.ticker-track span {
     color: var(--muted);
     font-weight: 700;
     font-size: .85rem;
@@ -693,20 +684,24 @@ nav {
     font-family: 'Cairo', sans-serif;
 }
 
-.ticker-group span::after {
-    content: "◆";
+.ticker-track span::after {
+    content: '◆';
     color: var(--gold);
     font-size: .55rem;
 }
 
-@keyframes ticker {
+
+@keyframes scroll {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-50%);
     }
 }
+
+
 /* ---------- TRUST STRIP ---------- */
 .trust-strip {
     background: var(--panel);
@@ -3035,6 +3030,17 @@ footer {
     .lang-switch{padding:7px 12px;font-size:.75rem;}
   }
 </style>
+
+<style id="lang-toggle-css">
+  .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-tooltip { display:none !important; }
+  body { top:0 !important; }
+  iframe.skiptranslate { display:none !important; }
+  .goog-text-highlight { background:none !important; box-shadow:none !important; }
+  #google_translate_element { display:none; }
+  font { background:none !important; box-shadow:none !important; }
+
+</style>
+
 </head>
 <body>
 
@@ -3069,6 +3075,7 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-ghost">الفوارس</div>
 
   <div class="wrap hero-grid">
     <div class="hero-content">
@@ -3086,7 +3093,7 @@ footer {
       </h1>
 
       <p class="lead">
-        وكالة الفوارس للتسويق الرقمي وتصميم المواقع — نحوّل رؤيتك إلى نتائج ملموسة من خلال استراتيجيات مبتكرة وحلول تقنية متقدمة
+        وكالة الفوارس للتسويق الرقمي — نحوّل رؤيتك إلى نتائج ملموسة من خلال استراتيجيات مبتكرة وحلول تقنية متقدمة.
       </p>
 
       <div class="hero-actions">
@@ -3125,50 +3132,48 @@ footer {
   </div>
 </section>
 
+<!-- TICKER -->
 <div class="ticker-section">
-    <div class="ticker-track">
+  <div class="ticker-track">
 
-        <!-- المجموعة الأولى -->
-        <div class="ticker-group">
-            <span>إدارة حملات Meta Ads</span>
-            <span>Google Ads</span>
-            <span>تصميم مواقع احترافية</span>
-            <span>تحسين محركات البحث SEO</span>
-            <span>أتمتة الأعمال AI</span>
-            <span>شات بوت ذكي</span>
-            <span>الاستهداف الجغرافي</span>
-            <span>صناعة المحتوى</span>
-            <span>إدارة صفحات السوشيال ميديا</span>
-            <span>كتابة المحتوى الإعلاني</span>
-            <span>تصميم الهوية البصرية</span>
-            <span>برمجة تطبيقات الموبايل</span>
-            <span>تحليل البيانات والـ Analytics</span>
-            <span>حلول الذكاء الاصطناعي</span>
-            <span>التسويق عبر البريد الإلكتروني</span>
-            <span>تصميم المتاجر الإلكترونية</span>
-        </div>
+    <span>إدارة حملات Meta Ads</span>
+    <span>Google Ads</span>
+    <span>تصميم مواقع احترافية</span>
+    <span>تحسين محركات البحث SEO</span>
+    <span>أتمتة الأعمال AI</span>
+    <span>شات بوت ذكي</span>
+    <span>الاستهداف الجغرافي</span>
+    <span>صناعة المحتوى</span>
 
-        <!-- المجموعة الثانية (نسخة طبق الأصل) -->
-        <div class="ticker-group" aria-hidden="true">
-            <span>إدارة حملات Meta Ads</span>
-            <span>Google Ads</span>
-            <span>تصميم مواقع احترافية</span>
-            <span>تحسين محركات البحث SEO</span>
-            <span>أتمتة الأعمال AI</span>
-            <span>شات بوت ذكي</span>
-            <span>الاستهداف الجغرافي</span>
-            <span>صناعة المحتوى</span>
-            <span>إدارة صفحات السوشيال ميديا</span>
-            <span>كتابة المحتوى الإعلاني</span>
-            <span>تصميم الهوية البصرية</span>
-            <span>برمجة تطبيقات الموبايل</span>
-            <span>تحليل البيانات والـ Analytics</span>
-            <span>حلول الذكاء الاصطناعي</span>
-            <span>التسويق عبر البريد الإلكتروني</span>
-            <span>تصميم المتاجر الإلكترونية</span>
-        </div>
+    <span>إدارة صفحات السوشيال ميديا</span>
+    <span>كتابة المحتوى الإعلاني</span>
+    <span>تصميم الهوية البصرية</span>
+    <span>برمجة تطبيقات الموبايل</span>
+    <span>تحليل البيانات والـ Analytics</span>
+    <span>حلول الذكاء الاصطناعي</span>
+    <span>التسويق عبر البريد الإلكتروني</span>
+    <span>تصميم المتاجر الإلكترونية</span>
 
-    </div>
+    <!-- تكرار للحركة المستمرة -->
+    <span>إدارة حملات Meta Ads</span>
+    <span>Google Ads</span>
+    <span>تصميم مواقع احترافية</span>
+    <span>تحسين محركات البحث SEO</span>
+    <span>أتمتة الأعمال AI</span>
+    <span>شات بوت ذكي</span>
+    <span>الاستهداف الجغرافي</span>
+    <span>صناعة المحتوى</span>
+
+    <span>إدارة صفحات السوشيال ميديا</span>
+    <span>كتابة المحتوى الإعلاني</span>
+    <span>تصميم الهوية البصرية</span>
+    <span>برمجة تطبيقات الموبايل</span>
+    <span>تحليل البيانات والـ Analytics</span>
+    <span>حلول الذكاء الاصطناعي</span>
+    <span>التسويق عبر البريد الإلكتروني</span>
+    <span>تصميم المتاجر الإلكترونية</span>
+
+  </div>
 </div>
 
   <!-- TRUST STRIP -->
@@ -4359,5 +4364,48 @@ scrollBtn.addEventListener("click", () => {
     });
 });
 </script>
+
+<div id="google_translate_element"></div>
+<script>
+  function siteLangIsEnglish(){
+    return document.cookie.indexOf('googtrans=/ar/en') > -1;
+  }
+  function setGoogTransCookie(val){
+    var host = location.hostname;
+    document.cookie = 'googtrans=' + val + ';path=/';
+    document.cookie = 'googtrans=' + val + ';path=/;domain=' + host;
+    document.cookie = 'googtrans=' + val + ';path=/;domain=.' + host;
+  }
+  function toggleSiteLang(){
+    if(siteLangIsEnglish()){
+      setGoogTransCookie('/ar/ar');
+    }else{
+      setGoogTransCookie('/ar/en');
+    }
+    location.reload();
+  }
+  function wireLangSwitch(){
+    var old = document.getElementById('langSwitch');
+    if(!old) return;
+    // Replace the node to strip the old partial-translation click handler
+    var btn = old.cloneNode(true);
+    old.parentNode.replaceChild(btn, old);
+    btn.setAttribute('translate','no');
+    btn.classList.add('notranslate');
+    btn.textContent = siteLangIsEnglish() ? 'عربي' : 'EN';
+    btn.addEventListener('click', toggleSiteLang);
+  }
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({
+      pageLanguage:'ar',
+      includedLanguages:'ar,en',
+      autoDisplay:false
+    }, 'google_translate_element');
+  }
+  try{ localStorage.setItem('site_lang','ar'); if(typeof applyLang==='function'){ applyLang('ar'); } }catch(e){}
+  wireLangSwitch();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
