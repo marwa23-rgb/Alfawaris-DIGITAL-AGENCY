@@ -669,8 +669,11 @@ nav {
 
 .ticker-track {
     display: flex;
-    width: max-content;
-    animation: ticker 30s linear infinite;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    flex-wrap: wrap;
+    white-space: normal;
 }
 
 
@@ -699,6 +702,15 @@ nav {
     font-size: .55rem;
 }
 
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
 /* ---------- TRUST STRIP ---------- */
 .trust-strip {
     background: var(--panel);
