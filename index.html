@@ -257,10 +257,8 @@ nav {
 
 
 
-.nav-links a:hover {
-
-    color:var(--ink);
-
+.nav-links a:hover{
+    color:var(--gold);
 }
 
 
@@ -504,17 +502,25 @@ nav {
     text-align: right;
 }
 
-/* الكتابة الشفافة الخلفية */
-.hero-ghost {
-    position: absolute;
-    font-size: 220px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.04);
-    left: 5%;
-    bottom: 0;
-    z-index: 1;
+.btn-ghost{
+    color:#fff;
+    border:1px solid #d4a017;
+    background:transparent;
+    padding:15px 30px;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.35s;
 }
 
+.btn-ghost:hover{
+    background:#d4a017;
+    color:#111;
+    border-color:#d4a017;
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(212,160,23,.35);
+}
 /* العنوان الصغير */
 .eyebrow-line {
     display: flex;
@@ -668,8 +674,8 @@ nav {
     direction: ltr;
 }
 
-.ticker-track:hover {
-    animation-play-state: paused;
+.ticker-track:hover{
+    animation-play-state: running;
 }
 
 .ticker-track span {
