@@ -656,58 +656,30 @@ nav {
 
 /* ---------- TICKER ---------- */
 
-.ticker-section {
-    background: var(--panel);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 24px 0;
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-    clip-path: polygon(0 12px, 100% 0, 100% calc(100% - 12px), 0 100%);
+.ticker-section{
+    overflow:hidden;
 }
 
-.ticker-track {
-    display: flex;
-    width: max-content;
-    animation: ticker 66s linear infinite;
+.ticker-track{
+    display:flex;
+    width:max-content;
+    animation:scroll 30s linear infinite;
 }
 
-
-.ticker-group {
-    display: flex;
-    gap: 45px;
-    flex-shrink: 0;
-    white-space: nowrap;
+.ticker-group{
+    display:flex;
+    gap:45px;
+    flex-shrink:0;
 }
 
-.ticker-group span {
-    color: var(--muted);
-    font-weight: 700;
-    font-size: .85rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-family: 'Cairo', sans-serif;
-}
-
-.ticker-group span::after {
-    content: "◆";
-    color: var(--gold);
-    font-size: .55rem;
-}
-
-@keyframes ticker {
-    from {
-        transform: translateX(0);
+@keyframes scroll{
+    from{
+        transform:translateX(0);
     }
-    to {
-        transform: translateX(-50%);
+    to{
+        transform:translateX(-50%);
     }
 }
-
 /* ---------- TRUST STRIP ---------- */
 .trust-strip {
     background: var(--panel);
