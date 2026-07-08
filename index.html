@@ -654,7 +654,8 @@ nav {
     }
 }
 
-/* ---------- TICKER SECTION ---------- */
+/* ---------- TICKER ---------- */
+
 .ticker-section {
     background: var(--panel);
     border-top: 1px solid var(--line);
@@ -668,18 +669,22 @@ nav {
 
 .ticker-track {
     display: flex;
-    gap: 45px;
-    white-space: nowrap;
-    animation: scroll 80s linear infinite;
     width: max-content;
-    direction: ltr;
+    animation: ticker 30s linear infinite;
 }
 
-.ticker-track:hover{
-    animation-play-state: running;
+.ticker-track:hover {
+    animation-play-state: paused;
 }
 
-.ticker-track span {
+.ticker-group {
+    display: flex;
+    gap: 45px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.ticker-group span {
     color: var(--muted);
     font-weight: 700;
     font-size: .85rem;
@@ -691,18 +696,16 @@ nav {
     font-family: 'Cairo', sans-serif;
 }
 
-.ticker-track span::after {
-    content: '◆';
+.ticker-group span::after {
+    content: "◆";
     color: var(--gold);
     font-size: .55rem;
 }
 
-
-@keyframes scroll {
+@keyframes ticker {
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
@@ -3126,76 +3129,50 @@ footer {
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker-section">
-  <div class="ticker-track">
+    <div class="ticker-track">
 
-    <span>إدارة حملات Meta Ads</span>
-    <span>Google Ads</span>
-    <span>تصميم مواقع احترافية</span>
-    <span>تحسين محركات البحث SEO</span>
-    <span>أتمتة الأعمال AI</span>
-    <span>شات بوت ذكي</span>
-    <span>الاستهداف الجغرافي</span>
-    <span>صناعة المحتوى</span>
-    <span>إدارة صفحات السوشيال ميديا</span>
-    <span>كتابة المحتوى الإعلاني</span>
-    <span>تصميم الهوية البصرية</span>
-    <span>برمجة تطبيقات الموبايل</span>
-    <span>تحليل البيانات والـ Analytics</span>
-    <span>حلول الذكاء الاصطناعي</span>
-    <span>التسويق عبر البريد الإلكتروني</span>
-    <span>تصميم المتاجر الإلكترونية</span>
-    <span>إدارة حملات Meta Ads</span>
-    <span>Google Ads</span>
-    <span>تصميم مواقع احترافية</span>
-    <span>تحسين محركات البحث SEO</span>
-    <span>أتمتة الأعمال AI</span>
-    <span>شات بوت ذكي</span>
-    <span>الاستهداف الجغرافي</span>
-    <span>صناعة المحتوى</span>
-    <span>إدارة صفحات السوشيال ميديا</span>
-    <span>كتابة المحتوى الإعلاني</span>
-    <span>تصميم الهوية البصرية</span>
-    <span>برمجة تطبيقات الموبايل</span>
-    <span>تحليل البيانات والـ Analytics</span>
-    <span>حلول الذكاء الاصطناعي</span>
-    <span>التسويق عبر البريد الإلكتروني</span>
-    <span>تصميم المتاجر الإلكترونية</span>
-    <span>إدارة حملات Meta Ads</span>
-    <span>Google Ads</span>
-    <span>تصميم مواقع احترافية</span>
-    <span>تحسين محركات البحث SEO</span>
-    <span>أتمتة الأعمال AI</span>
-    <span>شات بوت ذكي</span>
-    <span>الاستهداف الجغرافي</span>
-    <span>صناعة المحتوى</span>
-    <span>إدارة صفحات السوشيال ميديا</span>
-    <span>كتابة المحتوى الإعلاني</span>
-    <span>تصميم الهوية البصرية</span>
-    <span>برمجة تطبيقات الموبايل</span>
-    <span>تحليل البيانات والـ Analytics</span>
-    <span>حلول الذكاء الاصطناعي</span>
-    <span>التسويق عبر البريد الإلكتروني</span>
-    <span>تصميم المتاجر الإلكترونية</span>
-    <span>إدارة حملات Meta Ads</span>
-    <span>Google Ads</span>
-    <span>تصميم مواقع احترافية</span>
-    <span>تحسين محركات البحث SEO</span>
-    <span>أتمتة الأعمال AI</span>
-    <span>شات بوت ذكي</span>
-    <span>الاستهداف الجغرافي</span>
-    <span>صناعة المحتوى</span>
-    <span>إدارة صفحات السوشيال ميديا</span>
-    <span>كتابة المحتوى الإعلاني</span>
-    <span>تصميم الهوية البصرية</span>
-    <span>برمجة تطبيقات الموبايل</span>
-    <span>تحليل البيانات والـ Analytics</span>
-    <span>حلول الذكاء الاصطناعي</span>
-    <span>التسويق عبر البريد الإلكتروني</span>
-    <span>تصميم المتاجر الإلكترونية</span>
+        <!-- المجموعة الأولى -->
+        <div class="ticker-group">
+            <span>إدارة حملات Meta Ads</span>
+            <span>Google Ads</span>
+            <span>تصميم مواقع احترافية</span>
+            <span>تحسين محركات البحث SEO</span>
+            <span>أتمتة الأعمال AI</span>
+            <span>شات بوت ذكي</span>
+            <span>الاستهداف الجغرافي</span>
+            <span>صناعة المحتوى</span>
+            <span>إدارة صفحات السوشيال ميديا</span>
+            <span>كتابة المحتوى الإعلاني</span>
+            <span>تصميم الهوية البصرية</span>
+            <span>برمجة تطبيقات الموبايل</span>
+            <span>تحليل البيانات والـ Analytics</span>
+            <span>حلول الذكاء الاصطناعي</span>
+            <span>التسويق عبر البريد الإلكتروني</span>
+            <span>تصميم المتاجر الإلكترونية</span>
+        </div>
 
-  </div>
+        <!-- المجموعة الثانية (نسخة طبق الأصل) -->
+        <div class="ticker-group" aria-hidden="true">
+            <span>إدارة حملات Meta Ads</span>
+            <span>Google Ads</span>
+            <span>تصميم مواقع احترافية</span>
+            <span>تحسين محركات البحث SEO</span>
+            <span>أتمتة الأعمال AI</span>
+            <span>شات بوت ذكي</span>
+            <span>الاستهداف الجغرافي</span>
+            <span>صناعة المحتوى</span>
+            <span>إدارة صفحات السوشيال ميديا</span>
+            <span>كتابة المحتوى الإعلاني</span>
+            <span>تصميم الهوية البصرية</span>
+            <span>برمجة تطبيقات الموبايل</span>
+            <span>تحليل البيانات والـ Analytics</span>
+            <span>حلول الذكاء الاصطناعي</span>
+            <span>التسويق عبر البريد الإلكتروني</span>
+            <span>تصميم المتاجر الإلكترونية</span>
+        </div>
+
+    </div>
 </div>
 
   <!-- TRUST STRIP -->
