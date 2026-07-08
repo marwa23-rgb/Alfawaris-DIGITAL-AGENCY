@@ -669,11 +669,8 @@ nav {
 
 .ticker-track {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 45px;
-    flex-wrap: wrap;
-    white-space: normal;
+    width: max-content;
+    animation: ticker 30s linear infinite;
 }
 
 
@@ -702,8 +699,7 @@ nav {
     font-size: .55rem;
 }
 
-
-@keyframes scroll {
+@keyframes ticker {
     from {
         transform: translateX(0);
     }
