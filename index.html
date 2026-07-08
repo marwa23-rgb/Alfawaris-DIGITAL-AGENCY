@@ -654,17 +654,58 @@ nav {
     }
 }
 
+/* ---------- TICKER SECTION ---------- */
+.ticker-section {
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 12px, 100% 0, 100% calc(100% - 12px), 0 100%);
+}
+
 .ticker-track {
     display: flex;
-    justify-content: center; /* توسيط المحتوى */
-    align-items: center;
     gap: 45px;
     white-space: nowrap;
-    width: 100%;
+    animation: scroll 1s linear infinite;
+    width: max-content;
     direction: ltr;
 }
-.ticker-section {
-    overflow-x: auto;
+
+.ticker-track:hover{
+    animation-play-state: running;
+}
+
+.ticker-track span {
+    color: var(--muted);
+    font-weight: 700;
+    font-size: .85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.ticker-track span::after {
+    content: '◆';
+    color: var(--gold);
+    font-size: .55rem;
+}
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 /* ---------- TRUST STRIP ---------- */
